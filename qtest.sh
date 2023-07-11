@@ -31,6 +31,8 @@ ls -al $CONFIG_DIR
 
 # get utilities
 echo "Retrieving yq"
+# just in case it doesn't exist
+mkdir -p $CONFIG_DIR/usr/local/bin
 wget -O $CONFIG_DIR/usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
 chmod +x $CONFIG_DIR/usr/local/bin/yq
 echo ""
