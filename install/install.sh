@@ -14,6 +14,6 @@ echo "Stuff dot text"
 cat stuff.txt
 
 echo "Current directory"
-echo pwd
+pwd
 
 ls -al
