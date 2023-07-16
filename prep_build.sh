@@ -31,6 +31,10 @@ ls -al
 echo "Listing config dir:"
 ls -al $CONFIG_DIR
 
+cp -r $CONFIG_DIR ./app
+
+ls -al ./app
+
 # get utilities
 echo "Retrieving yq"
 # just in case it doesn't exist
@@ -40,7 +44,7 @@ chmod +x $CONFIG_DIR/usr/local/bin/yq
 echo "Done"
 echo ""
 
-IMG_TAG="$TARGET_RUBY_VER:$COMMIT_HASH"
+IMG_TAG="$TARGET_RUBY_VER-$COMMIT_HASH"
 
 # set the image tag in the global environment so the docker step can find it
 echo "IMG_TAG=$IMG_TAG" >> "$GITHUB_ENV"
