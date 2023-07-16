@@ -33,6 +33,7 @@ ls -al $CONFIG_DIR
 
 cp -r $CONFIG_DIR ./app
 
+echo "Listing app dir"
 ls -al ./app
 
 # get utilities
@@ -48,3 +49,6 @@ IMG_TAG="ruby${TARGET_RUBY_VER}-${COMMIT_HASH}"
 
 # set the image tag in the global environment so the docker step can find it
 echo "IMG_TAG=$IMG_TAG" >> "$GITHUB_ENV"
+
+# set the repository name
+echo "ECR_REPOSITORY=merit" >> "$GITHUB_ENV"
