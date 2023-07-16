@@ -3,8 +3,17 @@
 # apt update
 # apt upgrade -y
 
-curl -sSL https://install.python-poetry.org | python3 -
 export PATH=$PATH:/root/.local/bin
 
-poetry install --no-root
+# why was I installing poetry?
+# curl -sSL https://install.python-poetry.org | python3 -
+# poetry install --no-root
 
+echo "Doing some stuff" >> stuff.txt
+echo "Stuff dot text"
+cat stuff.txt
+
+echo "Current directory"
+echo pwd
+
+ls -al
