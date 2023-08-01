@@ -16,7 +16,7 @@ jobs:
 
 
 
-      - name: Prepare build environment
+      - name: Echo Something
         run: |
           echo "This is a test"
         
