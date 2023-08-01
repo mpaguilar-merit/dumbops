@@ -25,7 +25,7 @@ jobs:
           path: build
 
       - name: Prepare build environment
-        run: <<-SCRIPT
-        echo "This is a test"
-        SCRIPT
+        run: |
+          echo "This is a test"
+        
         shell: bash
