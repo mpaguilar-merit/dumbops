@@ -1,0 +1,31 @@
+on:
+  workflow_dispatch:
+    inputs:
+      target_ruby_version:
+          required: false
+          default: '238'
+        
+
+env:
+  TARGET_RUBY_VER: ${{ inputs.target_ruby_version }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          path: app        
+
+      - uses: actions/checkout@v3
+        with:
+          repository: 'mpaguilar-merit/dumbops'
+          token: ${{ secrets.REPO_KEY }}
+          path: build
+
+      - name: Prepare build environment
+        run: <<-SCRIPT
+        echo "This is a test"
+        SCRIPT
+        shell: bash
