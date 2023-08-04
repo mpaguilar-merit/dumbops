@@ -21,3 +21,14 @@ jobs:
           echo "This is a test"
         
         shell: bash
+
+  deployment:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Echo a deploy
+        run: |
+          echo "Deploying"
+        shell: bash
+
+    
