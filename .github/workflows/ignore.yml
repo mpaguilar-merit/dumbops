@@ -1,0 +1,34 @@
+on:
+  workflow_dispatch:
+        
+
+env:
+  TARGET_RUBY_VER: ${{ inputs.target_ruby_version }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          path: build   
+
+
+
+      - name: Echo Something
+        run: |
+          echo "This is a test"
+        
+        shell: bash
+
+  deployment:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Echo a deploy
+        run: |
+          echo "Deploying"
+        shell: bash
+
+    
